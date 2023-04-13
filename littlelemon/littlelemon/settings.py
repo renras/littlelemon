@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '0A5P4F0fQQUyRyTt7HPP',
+        'HOST': 'containers-us-west-118.railway.app',
+        'PORT': '6929', 
     }
 }
 
