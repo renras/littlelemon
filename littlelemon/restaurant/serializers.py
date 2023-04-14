@@ -1,6 +1,6 @@
 # Serializers define the API representation.
 from rest_framework import serializers
-from restaurant.models import Booking, Menu
+from restaurant.models import Booking, MenuItem
 
 
 class BookingSerializer(serializers.HyperlinkedModelSerializer):
@@ -9,8 +9,8 @@ class BookingSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'name', 'num_guests', 'booking_date']
 
 
-class MenuSerializer(serializers.HyperlinkedModelSerializer):
+class MenuItemSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
-    model = Menu
+    model = MenuItem
     fields = ['id', 'title', 'price', 'inventory']
 
