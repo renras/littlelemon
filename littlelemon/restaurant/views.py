@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from restaurant.models import Booking, MenuItem
 from restaurant.serializers import BookingSerializer, MenuItemSerializer
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 def index(request):
@@ -14,5 +15,6 @@ class BookingViewSet(viewsets.ModelViewSet):
 
 
 class MenuItemViewSet(viewsets.ModelViewSet):
+  permission_classes = [IsAuthenticated]
   queryset = MenuItem.objects.all()
   serializer_class = MenuItemSerializer
